@@ -19,7 +19,7 @@ Used for registering a context menu.
   </Tab>
   <Tab>
     ```ts
-    import lib from '@overextended/ox_lib/client';
+    import lib from '@communityox/ox_lib/client';
 
     lib.registerContext(context);
     ```
@@ -102,7 +102,7 @@ Opens a registered context menu by its id.
   </Tab>
   <Tab>
     ```ts
-    import lib from '@overextended/ox_lib/client';
+    import lib from '@communityox/ox_lib/client';
 
     lib.showContext(id);
     ```
@@ -124,7 +124,7 @@ Hides any currently visible context menu.
   </Tab>
   <Tab>
     ```ts
-    import lib from '@overextended/ox_lib/client';
+    import lib from '@communityox/ox_lib/client';
 
     lib.hideContext(onExit);
     ```
@@ -149,7 +149,7 @@ If no context menu is open returns `nil`.
   </Tab>
   <Tab>
     ```ts
-    import lib from '@overextended/ox_lib/client';
+    import lib from '@communityox/ox_lib/client';
 
     lib.getOpenContextMenu();
     ```
@@ -215,7 +215,7 @@ First we register the menu with our specified options then we call the show func
   </Tab>
   <Tab>
     ```ts
-    import lib from '@overextended/ox_lib/client';
+    import lib from '@communityox/ox_lib/client';
 
     lib.registerContext({
       id: 'some_menu',
