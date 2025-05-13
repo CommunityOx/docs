@@ -31,7 +31,7 @@ Returns:
 
      Methods:
     - callMethod: `function`(name: `string`, args: `(number | string | boolean)[]`, returnValue?: `string`)
-    - setFullscreen: `function`(isFullscreen: `boolean`)
+    - setFullScreen: `function`(isFullscreen: `boolean`)
     - setProperties: `function`(x: `number`, y: `number`, width: `number`, height: `number`)
     - setRenderTarget: `function`(name: `string`, model: `string | number`)
     - isDrawing: `function`
@@ -59,7 +59,7 @@ local scaleform = lib.scaleform:new({
 scaleform:callMethod('method', { 1, 2, 3 })
 
 -- Set Fullscreen Scaleform
-scaleform:setFullscreen(false)
+scaleform:setFullScreen(false)
 
 -- Set Scaleform setProperties
 scaleform:setProperties(1, 1, 1, 1)
