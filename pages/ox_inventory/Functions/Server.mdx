@@ -676,6 +676,16 @@ exports.ox_inventory:ClearInventory(inv, keep)
 - inv: `table` or `string` or `number`
 - keep?: `string` or `string[]`
 
+## RemoveInventory
+
+Removes an inventory from runtime and save it if it's not a temporary stash, dumpster or drop.
+
+```lua
+exports.ox_inventory:RemoveInventory(inventoryId)
+```
+
+- inventoryId: `string`
+
 ## Search
 
 Searches an inventory for a specified item.
