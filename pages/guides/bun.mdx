@@ -1,0 +1,26 @@
+---
+title: bun
+---
+
+# bun
+
+bun is a fast and disk space efficient package manager, serving as an alternative to npm, pnpm and yarn.
+
+- Ensure you have [installed Node.js](./nodejs).
+- Open a command-line terminal (e.g. Terminal, Command Prompt).
+- Enter `curl -fsSL https://bun.sh/install | bash` to install bun on linux.
+- Enter `powershell -c "irm bun.sh/install.ps1 | iex"` to insall bun on windows.
+- You can install dependencies with bun using `bun i`.
+
+You can reference `package.json` files for available scripts, i.e.
+
+```json
+"scripts": {
+    "build": "bun run build.js",
+    "watch": "bun run build.js --watch",
+    "format": "bun run biome format --write",
+    "lint": "bun run biome lint --write"
+}
+```
+
+Using the example above `bun run build` will run the build script for the given package.
