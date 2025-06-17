@@ -904,3 +904,36 @@ water.metadata.type = 'clean'
 ox_inventory:SetMetadata(source, water.slot, water.metadata)
 print(('modified %sx water in slot %s with new metadata'):format(water.count, water.slot))
 ```
+
+## setContainerProperties
+
+Defines the item as a container and sets its properties.
+
+```lua
+exports.ox_inventory:setContainerProperties(itemName, properties)
+```
+
+- itemName: `string`
+- properties: `table`
+  - slots: `number`
+    - Number of slots available in the container.
+  - maxWeight: `number`
+    - Maximum weight the container can hold.
+  - whitelist?: `table<string, true> | string[]`
+    - A table of item names that are allowed in the container.
+    - If not provided, all items are allowed except those blacklisted.
+  - blacklist?: `table<string, true> | string[]`
+    - A table of item names that are not allowed in the container.
+    - If not provided, no items are blacklisted unless whitelist is provided.
+
+<br />
+<u>**Example**</u>
+
+```lua
+-- Sets pizzabox as a container with 1 slot, maximum weight of 1000 grams and whitelists only the pizza item.
+exports.ox_inventory:setContainerProperties('pizzabox', {
+    slots = 1,
+    maxWeight = 1000,
+    whitelist = { 'pizza' },
+})
+```

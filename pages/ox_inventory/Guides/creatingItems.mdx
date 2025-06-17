@@ -227,38 +227,41 @@ end)
 
 Like with other items the item must first be registered.
 
-When registered you can define the item as a container in `/modules/items/containers.lua`
-The key for the container is the `name` you gave it when registering the item.
+When registered you can define the item as a container in `/modules/items/containers.lua` or using the [`setContainerProperties`](../Functions/Server#setcontainerproperties) server export.
+The key for the container is the `name` you gave it when registering the item.  
 You can also define the number of slots, the maximum weight, blacklist and whitelist items.
 
-- itemName:
-  - slots: number
-  - The number represents the amount of slots
-  - maxWeight: number
-  - The number represents the maximum weight within the container
-  - blacklist:
-    - Supports single and multiple items
-    - `{ 'testburger', 'testburger2' }`
-  - whitelist:
-    - Supports single and multiple items
-    - `{ 'testburger', 'testburger2' }`
+<br />
+
+- itemName: `string`
+- properties: `table`
+  - slots: `number`
+    - Number of slots available in the container.
+  - maxWeight: `number`
+    - Maximum weight the container can hold.
+  - whitelist?: `table<string, true> | string[]`
+    - A table of item names that are allowed in the container.
+    - If not provided, all items are allowed except those blacklisted.
+  - blacklist?: `table<string, true> | string[]`
+    - A table of item names that are not allowed in the container.
+    - If not provided, no items are blacklisted unless whitelist is provided.
 
 ### Example
 
 ```lua filename="Register Example"
-['paperbag'] = {
-    label = 'Paper Bag',
-    weight = 1,
+['pizzabox'] = {
+    label = 'Pizza Box',
+    weight = 50,
     stack = false,
     close = false,
-    consume = 0
+    consume = 0,
 },
 ```
 
 ```lua filename="Properties Example"
-setContainerProperties('paperbag', {
-	slots = 5,
-	maxWeight = 1000,
-	blacklist = { 'testburger' }
+setContainerProperties('pizzabox', {
+    slots = 1,
+    maxWeight = 1000,
+    whitelist = { 'pizza' },
 })
 ```
