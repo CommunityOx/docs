@@ -315,6 +315,23 @@ Ox.GetVehicle(entityId)
 
 - [`OxVehicle`](/ox_core/Classes/Server/OxVehicle)
 
+## Ox.GetVehicleFromFilter
+
+Get the first `OxVehicle` matching a filter.
+
+```lua
+Ox.GetVehicleFromFilter(filter)
+```
+
+**Parameters**
+
+- filter?: `{ [string]: any }`
+  - Compare vehicle fields and metadata against the given key-value pairs.
+
+**Returns**
+
+- [`OxVehicle`](/ox_core/Classes/Server/OxVehicle)
+
 ## Ox.GetVehicleFromNetId
 
 Get an `OxVehicle` from its network id.
@@ -346,6 +363,23 @@ Ox.GetVehicleFromVin(vin)
 **Returns**
 
 - [`OxVehicle`](/ox_core/Classes/Server/OxVehicle)
+
+## Ox.GetVehicles
+
+Get an array of containing `OxVehicle` for all vehicles matching a filter, if given.
+
+```lua
+Ox.GetVehicles(filter)
+```
+
+**Parameters**
+
+- filter?: `{ [string]: any }`
+  - Compare vehicle fields and metadata against the given key-value pairs.
+
+**Returns**
+
+- [`OxVehicle[]`](/ox_core/Classes/Server/OxVehicle)
 
 ## Ox.RemoveGroupPermission
 
