@@ -116,3 +116,19 @@ exports.ox_inventory:displayMetadata({
     defense = 'DEF'
 })
 ```
+
+
+## Creating weapons with attachments/ammo using metadata
+
+You can create a weapon with attachments already on it using metadata:
+
+```lua
+exports.ox_inventory:AddItem(src, 'weapon_assaultrifle', 1, {
+    ammo = 30,
+    components = {
+      'at_flashlight',
+    },
+})
+```
+
+All components list can be found in [data/weapons.lua](https://github.com/CommunityOx/ox_inventory/blob/4d178a50a225661eeadcefc5b531c52e10522191/data/weapons.lua#L721)
