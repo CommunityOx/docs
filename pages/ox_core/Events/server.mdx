@@ -48,7 +48,7 @@ When the active group of a character has changed.
   </Tabs.Tab>
   <Tabs.Tab>
   ```ts copy
-  on('ox:setActiveGroup', (playerId: number, groupName: string, previousGroupName?: string) => {
+  on('ox:setActiveGroup', (playerId: number, groupName: string, previousGroupName: string | undefined) => {
     console.log(playersSaved);
   });
   ```
@@ -57,7 +57,7 @@ When the active group of a character has changed.
 
 * playerId: `number`
 * groupName: `string`
-* previousGroupName?: `string`
+* previousGroupName: `string | undefined`
 
 ## ox:setGroup
 
