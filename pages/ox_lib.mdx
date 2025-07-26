@@ -12,7 +12,7 @@ A standalone library for providing easily reusable code as importable modules an
 
 <Callout type="info">
 
-We **strongly** recommend referring to [Guides](../guides) for setting up Git, Node.js, and pnpm.
+We **strongly** recommend referring to [Guides](../guides) for setting up Git, and bun.
 
 </Callout>
 
@@ -23,8 +23,8 @@ We **strongly** recommend referring to [Guides](../guides) for setting up Git, N
 ```bash
 git clone https://github.com/communityox/ox_lib.git
 cd ox_lib/web
-pnpm i
-pnpm build
+bun i
+bun run build
 ```
 
 ### Config
@@ -144,24 +144,18 @@ If you wish to edit any of the UI elements you will need to download the _source
 </Callout>
 **Requirements:**
 
-- [Node.js (LTS)](https://nodejs.org/)
-- pnpm
+- bun
 
-**Installing Node.js:**
+**Installing bun:**
 
-- Download the LTS version of Node.js.
-- Go through the install and make sure you install all of the features.
-- Run node --version in cmd and make sure that it gives you the version number. If it doesn't then you didn't install it correctly.
-
-**Installing pnpm:**
-
-- After installing NodeJS you can install pnpm by running `npm install -g pnpm`.
+- Install bun using  `curl -fsSL https://bun.sh/install | bash` for linux
+- Install bun using `powershell -c "irm bun.sh/install.ps1 | iex"` for windows
 
 **Building the UI:**
 
 - cd into the web directory.
-- run `pnpm i` to install the dependencies.
-- run `pnpm build` to build the source files.
+- run `bun i` to install the dependencies.
+- run `bun run build` to build the source files.
 
 <Callout type="info">
 When working in the browser you can run `pnpm start`, which supports hot reloads meaning that
