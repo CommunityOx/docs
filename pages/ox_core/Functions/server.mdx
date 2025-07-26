@@ -91,11 +91,15 @@ Ox.DeleteGroup(groupName)
 
 ## Ox.GenerateVehiclePlate
 
-Generate a unique vehicle plate that doesn't exist in database.
+Generate a unique vehicle plate that doesn't exist in database. Pattern defaults to `ox:plateFormat` if not provided.
 
 ```lua
-Ox.GenerateVehiclePlate()
+Ox.GenerateVehiclePlate(pattern)
 ```
+
+**Parameters**
+
+- pattern?: `string`
 
 **Returns**
 
