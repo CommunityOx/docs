@@ -89,6 +89,7 @@ Shops can be added using `exports.ox_inventory:RegisterShop` on the server, howe
 ### Example
 
 ```lua
+-- Server-side
 exports.ox_inventory:RegisterShop('TestShop', {
     name = 'Test shop',
     inventory = {
@@ -103,4 +104,7 @@ exports.ox_inventory:RegisterShop('TestShop', {
         police = 0
     },
 })
+
+-- Client-side
+exports.ox_inventory:openInventory("shop", { type = "TestShop" })
 ```
