@@ -30,6 +30,55 @@ When a character is loaded
 * playerId: `number`
 * isNew?: `boolean`
 
+## ox:playerLogout
+
+When a character is logged out
+
+<Tabs items={['Lua', 'JS']}>
+  <Tabs.Tab>
+    ```lua copy
+    AddEventHandler('ox:playerLogout', function()
+      print('Log out received')
+    end)
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+  ```ts copy
+  on('ox:playerLogout', () => {
+    console.log('Log out received');
+  });
+  ```
+  </Tabs.Tab>
+</Tabs>
+
+## ox:player:\<key\>
+
+These events are all triggered when using [`OxPlayer.set`](/ox_core/Classes/Server/OxPlayer#oxplayerset) with the replicatd flag.
+These can be used as a parallel system compared to statebags where the data is only known by the server & concerned client.
+
+For example, when a players active group is updated it will trigger the `ox:player:activeGroup` event. Parameters:
+
+<Tabs items={['Lua', 'JS']}>
+  <Tabs.Tab>
+    ```lua copy
+    RegisterNetEvent('ox:player:activeGroup', function(newActiveGroup)
+      print(newActiveGroup)
+    end)
+    ```
+
+    * newActiveGroup: `string` | `nil`
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+    onNet('ox:player:activeGroup', (newActiveGroup: string | null) => {
+      console.log(newActiveGroup);
+    });
+    ```
+
+    * newActiveGroup: `string` | `null`
+  </Tabs.Tab>
+</Tabs>
+
 ## ox:statusTick
 
 On each status tick, returning changed statuses
